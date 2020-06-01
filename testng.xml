@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All tests" parallel="methods" thread-count="5">
+    <listeners>
+        <listener class-name="Udemy.Listeners"/>
+    </listeners>
+    <test name="MainPageLoad">
+        <classes>
+            <class name="Udemy.MainPageLoad"/>
+            </classes>
+    </test>
+    <test name="NaviBar">
+        <classes>
+            <class name="Udemy.NaviBar"/>
+        </classes>
+    </test>
+    <test name="Regist page">
+        <classes>
+            <class name="Udemy.RegPage"/>
+        </classes>
+    </test>
+    <test name="Menu tabs quantity checking">
+        <classes>
+            <class name="Udemy.NaviMenuElem"/>
+        </classes>
+    </test>
+</suite>
