@@ -1,0 +1,65 @@
+шаблон для создания x-path:
+//tagName[@Attribute='value']
+//tagName//tagName[@Attribute='value']
+//*[@Attribute='value']
+шаблон для создания x-path c помощью Regular expression (в случае динамических атрибутов):
+//tagName[contains(@Attribute,'value')] - где value - это неизменнная часть значения атрибута
+
+шаблон для создания css-селектора:
+tagName[Attribute='value']
+tagName#id
+#id
+tagName.className
+Шаблон для создания сss-селектора c помощью Regular expression (в случае динамических атрибутов):
+tagName[Attribute*='value'] - где value - это неизменнная часть значения аттрибута
+
+Css-Selector работает быстрее, чем xpath в 10 раз (не точно)
+
+Получение xpath элемента с помощью связи parent-child
+//div[@class='name']/div/div[2]/div/input
+//div[@class='name'] //a[@id='id']
+
+Перемещение от дочернего к дочернему элементу:
+//div[@class='name']/ul/li[1]/following-sibling::li[2]
+Перемещение от дочернего к родительскому элементу:
+//li[@id='']/parent::ul
+Получение xpath элемента через текст ссылки\тега
+//*[text()='MyText']
+Получение xpath элемента через часть текста ссылки\тега
+//*[contains(text(), 'MyText')]
+
+Работа с Select (! только для элементов с tag select -> option)
+Создаем объект Select и передаем ему элемент select
+Select s = new Select(driver.findElement(By. ...))
+Выбор по содержимому value
+        s.selectByValue("USD")
+По порядковому номеру
+        s.selectByIndex(3)
+По тексту (в данном примере совпадает с value)
+        s.selectByVisibleText("USD")
+
+Ожидание загрузки страницы (элемента)
+Implicit или глобальный способ - задается для всего теста глобально и работает для каждого его шага.
+Его минус в том, что не проверяется performance сайта
+driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS) - если идет загрузка, то driver ждет до 5 сек (как в примере)
+
+Explicit - задается точечно для определенного шага.
+WebDriverWait wait=new WebDriverWait(driver,5,400) - передаем: драйвер, общий таймаут в сек, слип в милисек (необязательно))
+wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("xpath")))
+
+FluentWait - используется редко
+Создание объекта:
+Wait<WebDriver> wait = new FluentWait<>(driver)
+                .withTimeout(Duration.ofSeconds(10))
+                .pollingEvery(Duration.ofSeconds(1))
+                .ignoring(NoSuchElementException.class);
+Использование:
+WebElement foo = wait.until(new Function<WebDriver, WebElement>() {
+            @Override
+            public WebElement apply(WebDriver driver) {
+                if (driver.findElement(By.xpath("путь")).isDisplayed()) {
+                    return driver.findElement(By.xpath("путь"));
+                } else
+                    return null;
+            }
+        });

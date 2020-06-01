@@ -1,0 +1,18 @@
+Командная строка
+для hub (моего компа):
+java -jar selenium-server-standalone-3.141.59.jar -role hub - запуск с директории, в которой лежит файл
+
+для node (удаленной машины)
+java -Dweb.chrome.driver="путь:/где/лежит/chromedriver.exe" -jar selenium-server-standalone-3.141.59.jar -role webdriver -hub http://ip-адрес-hub/grid/register
+-port 5566 (на каком порте открываться)
+
+Настройки теста:
+DesiredCapabilities dc=new DesiredCapabilities();
+        //выбираем браузер
+        dc.setBrowserName("chrome");
+        //выбираем ОС
+        dc.setPlatform(Platform.WINDOWS);
+        //ip-адрес hub
+        URL hub=new URL("http://localhost:4444/wd/hub");
+        //передаем значение в RemoteWebDriver
+        WebDriver driver=new RemoteWebDriver(hub,dc);

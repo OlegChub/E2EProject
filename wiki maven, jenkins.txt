@@ -1,0 +1,14 @@
+Maven (http://maven.apache.org/surefire/maven-surefire-plugin/examples/testng.html)
+Управление через cmd
+1. cd указываем папку с тестами
+2. mvn clean - чистим лог от информации по прошедшим тестам
+3. mvn compile - проверям на ошибки компиляции
+4. mvn test - запускаем тесты ?!ОБЯЗАТЕЛЬНО в конце названия теста должно быть Test (иначе тест не запустится)
+5. mvn -Dtest=Test1 test - запуск конкретного теста с именем Test1
+6. mvn test -PSmoke - запуск конкретного профайла с id Smoke
+7. mvn test -Dbrowser=chrome - запуск теста под конкретным браузером. В класс необходимо добавить инициализацию драйвера
+                               через String browserName=System.getProperty("browser");
+
+Jenkins - необходимо скачать war файл
+из папки, где лежит файл через cmd:
+java -jar jenkins.war -httpPort=8080 - запускаем локально на порте 8080
