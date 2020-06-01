@@ -1,0 +1,34 @@
+Cucumber должен иметь определенную структуру проекта. В данном случает quickstart + в test создана папка resources
+1. Создаем .feature файл, куда помещаем описание теста
+Ключевые слова:
+Feature: - название пакета
+Scenario: - название теста/сценария
+или
+Scenario Outline: - используется, если есть переменные (Examples)
+Given - начало теста (предусловие)
+And - дополнение
+When - действие, например: user login with <login> and pass <password>
+Then - результат
+
+Examples: - сюда прописыватся переменные. В данном примере - это логин и пароль. Передаются в When в скобках <>
+|login         |password  |
+|Hoplla@tut.by |Pass12345 |
+|Solpla@tut.by |12345     |
+
+2. Создаем stepDefinition.class, в котором определяем шаги scenario
+Файл можно создать с помощью:
+1) Расширения для Chrome - Tidy Gherkin
+2) Консоли. Для этого запускаем TestRunner (см. ниже) и в результате ошибки выдается определение каждого шага. Все копируем и
+вставляем в класс stepDefinition.
+В @Given("^...$"), @When("^...$") и т.д. вставляется соответствующий текст из файла .feature. Таким образом оуществляется привязка
+feature и stepDefinition. Переменные параментры (логин и пароль) прописываются в виде шаблона (.+)
+
+3. Создаем TestRunner.class
+Перед определением класса прописываются:
+@CucumberOptions(
+        features="src/test/resources/cucumber/features/", - месторасположение файла .feature
+        glue= "src/test/resources/cucumber/stepDefinition/" - место расположение класса stepDefinition.class
+        )
+Для того, чтобы запускать тесты через testng,
+public class TestRunner extends AbstractTestNGCucumberTests {}
+Для этого нужно добавить зависимость в POM.xml
