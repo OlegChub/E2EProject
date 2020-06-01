@@ -36,6 +36,7 @@ public class StepDefinition extends Base {
     public void entrance_is(String string) {
         Assert.assertTrue(driver.findElement(By.className("errortext")).isDisplayed());
         System.out.println("Entrance credentials are " + string);
+		System.out.println("finished successfully");
         if (driver != null)
             driver.close();
     }
