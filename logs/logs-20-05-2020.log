@@ -1,0 +1,20 @@
+12:32:30.646 [TestNG-test=NaviBar-1] INFO  Udemy.NaviBar - Main page is loaded
+12:32:30.794 [TestNG-test=NaviBar-1] INFO  Udemy.NaviBar - Navi bar is displayed
+12:32:30.981 [main] INFO  Udemy.NaviBar - Driver is shutted down
+12:32:42.006 [main] INFO  Udemy.NaviBar - Driver is initialized
+12:32:45.146 [TestNG-test=Menu tabs quantity checking-1] INFO  Udemy.NaviBar - Main page is loaded
+12:32:46.725 [TestNG-test=Menu tabs quantity checking-1] ERROR Udemy.NaviBar - Menu tabs are absent
+12:32:48.194 [main] INFO  Udemy.NaviBar - Driver is shutted down
+12:45:41.455 [main] INFO  Udemy.MainPageLoad - Driver is initialized
+12:45:45.042 [main] INFO  Udemy.MainPageLoad - Main page is loaded
+12:45:48.441 [main] INFO  Udemy.MainPageLoad - Driver is closed
+12:45:50.664 [main] INFO  Udemy.NaviBar - Driver is initialized
+12:45:53.942 [TestNG-test=NaviBar-1] INFO  Udemy.NaviBar - Main page is loaded
+12:45:54.064 [TestNG-test=NaviBar-1] INFO  Udemy.NaviBar - Navi bar is displayed
+12:45:54.211 [main] INFO  Udemy.NaviBar - Driver is shutted down
+12:46:04.571 [main] INFO  Udemy.NaviBar - Driver is initialized
+12:46:07.392 [TestNG-test=Menu tabs quantity checking-1] INFO  Udemy.NaviBar - Main page is loaded
+12:46:09.355 [TestNG-test=Menu tabs quantity checking-1] ERROR Udemy.NaviBar - Menu tabs are absent
+12:46:10.678 [main] INFO  Udemy.NaviBar - Driver is shutted down
+12:48:36.136 [main] INFO  Udemy.MainPageLoad - Driver is initialized
+12:48:39.519 [main] INFO  Udemy.MainPageLoad - Main page is loaded

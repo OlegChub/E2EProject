@@ -1,0 +1,7 @@
+14:38:49.494 [TestNG-test=NaviBar-2] INFO  Udemy.NaviBar - Main page is loaded
+14:38:49.842 [TestNG-test=NaviBar-1] INFO  Udemy.NaviBar - Navi bar is displayed
+14:38:50.053 [main] INFO  Udemy.NaviBar - Driver is shutted down
+14:39:04.968 [main] INFO  Udemy.NaviBar - Driver is initialized
+14:39:09.683 [TestNG-test=Menu tabs quantity checking-1] INFO  Udemy.NaviBar - Main page is loaded
+14:39:11.492 [TestNG-test=Menu tabs quantity checking-1] ERROR Udemy.NaviBar - Menu tabs are absent
+14:39:11.763 [main] INFO  Udemy.NaviBar - Driver is shutted down
