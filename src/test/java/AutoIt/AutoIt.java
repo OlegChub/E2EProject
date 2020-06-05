@@ -4,6 +4,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -29,13 +31,15 @@ public class AutoIt {
         driver.navigate().to("https://smallpdf.com/ru/pdf-to-jpg");
         driver.findElement(By.cssSelector("button[type='button']")).click();
         Thread.sleep(2000);
+
         // запускаем записанный ранее autoit.exe
         Runtime.getRuntime().exec("C:\\Users\\60066285\\Desktop\\java\\E2Eproject\\src\\test\\resources\\autoit.exe");
-        Thread.sleep(5000);
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("div[class*='dsSLsN']")));
         driver.findElement(By.xpath("//div[contains(@class,'iPohUv')]/div[2]")).click();
 
         driver.findElement(By.cssSelector("button[class*='hKtorq']")).click();
-        Thread.sleep(5000);
+        wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("div[class*='fIqjTd']")));
         driver.findElement(By.cssSelector("div[class*='fIqjTd']")).click();
 
         String filePath = downloadPath + "\\Test-изображения.zip";
