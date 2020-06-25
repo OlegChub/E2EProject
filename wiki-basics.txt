@@ -4,6 +4,7 @@
 //*[@Attribute='value']
 шаблон для создания x-path c помощью Regular expression (в случае динамических атрибутов):
 //tagName[contains(@Attribute,'value')] - где value - это неизменнная часть значения атрибута
+//input[@type='text' and @name='q'] - используем доп параметр с and или or
 
 шаблон для создания css-селектора:
 tagName[Attribute='value']
